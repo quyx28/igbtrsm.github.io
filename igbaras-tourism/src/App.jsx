@@ -8,7 +8,7 @@ import guidelinesImage from './assets/images/section3.jpg';
 import napulakImage from './assets/images/napulak/napu.jpg';
 import igatmonImage from './assets/images/igatmon/igat.jpg';
 import salagyawanImage from './assets/images/salag/salag.jpg';
-import batoImage from './assets/images/bato/bato.jpg';
+import batoImage from './assets/images/bato/bato (3).jpg';
 import guiritsanImage from './assets/images/guiritsan/guirit.jpg';
 import butuanImage from './assets/images/butuan/butuan.jpg';
 import nadsadjanImage from './assets/images/nadsajan/nads.jpg';
@@ -22,28 +22,35 @@ const getGallery = (folder) => Object.entries(photoModules)
 const featured = [
   { id: 'napulak', name: 'Mt. Napulak', type: 'Mountains', barangay: 'Brgy. Tigbanaba', elevation: '1,239 MASL', fee: 'Day ₱1,000 · Overnight ₱1,500', image: napulakImage, gallery: getGallery('napulak'), tagline: 'Iconic rock peak and sweeping sea of clouds.', porter: '₱700/10kgs (Day) · ₱1,000/kgs (Overnight)' },
   { id: 'igatmon', name: 'Mt. Igatmon', type: 'Mountains', barangay: 'Brgy. Tigbanaba', elevation: '1,120 MASL', fee: 'Day ₱1,000 · Overnight ₱1,500', image: igatmonImage, gallery: getGallery('igatmon'), tagline: 'Scenic grassland ridges and panoramic highland views.', porter: '₱1,000/10kgs (Day) · ₱1,500/kgs (Overnight)' },
-  { id: 'salagyawan', name: 'Mt. Salagyawan', type: 'Mountains', barangay: 'Brgy. Igcabugao', elevation: 'Approx. 1,250+ MASL', fee: 'Day ₱800', image: salagyawanImage, gallery: getGallery('salag'), tagline: 'Lush green valleys and dramatic mountain silhouettes.' },
+  { id: 'salagyawan', name: 'Mt. Salagyawan (Saligyawan)', type: 'Mountains', barangay: 'Brgy. Igcabugao', elevation: 'Approx. 1,250+ MASL', fee: 'Day ₱800', image: salagyawanImage, gallery: getGallery('salag'), tagline: 'Lush green valleys and dramatic mountain silhouettes.' },
   { id: 'bato', name: 'Mt. Bato Igmatindog', type: 'Mountains', barangay: 'Brgy. Igcabugao', elevation: 'Ridge Peak', fee: 'Day ₱500 · Overnight ₱1,000', image: batoImage, gallery: getGallery('bato'), tagline: 'Striking knife-edge summit trail in Brgy. Igcabugao.' },
-  { id: 'guiritsan', name: 'Guiritsan Falls', type: 'Waterfalls', barangay: 'Brgy. Igcabugao', elevation: 'Day Tour 6AM–5PM', fee: 'Day ₱300 · Overnight ₱1,500', image: guiritsanImage, gallery: getGallery('guiritsan'), tagline: 'Emerald natural basin framed by rolling green hills.' },
+  { id: 'guiritsan', name: 'Guiritsan Falls', type: 'Waterfalls', barangay: 'Brgy. Igcabugao', elevation: 'Day Tour 6:00 AM – 5:00 PM', fee: 'Day ₱300 · Overnight ₱1,500', image: guiritsanImage, gallery: getGallery('guiritsan'), tagline: 'Emerald natural basin framed by rolling green hills.' },
   { id: 'butuan', name: 'Butuan Falls', type: 'Waterfalls', barangay: 'Brgy. Igcabugao', elevation: 'Forest Waterfall', fee: 'Day ₱500', image: butuanImage, gallery: getGallery('butuan'), tagline: 'Towering cascade tucked deep inside the forest canopy.' },
-  { id: 'nadsadjan', name: 'Nadsadjan Falls', type: 'Waterfalls', barangay: 'Igbaras', elevation: 'Iconic Waterfall', fee: 'Day ₱350 · Overnight ₱500', image: nadsadjanImage, gallery: getGallery('nadsajan'), tagline: 'Dramatic rock canyon and refreshing mountain waters.' },
+  { id: 'nadsadjan', name: 'Nadsadjan Falls', type: 'Waterfalls', barangay: 'Brgy. Passi', elevation: 'Iconic Waterfall', fee: 'Day ₱350 · Overnight ₱500', image: nadsadjanImage, gallery: getGallery('nadsajan'), tagline: 'Dramatic rock canyon and refreshing mountain waters.' },
 ];
 
-const mountains = [
-  ['Mount Taripis', '₱750 Day | ₱1,500 Overnight'], ['Mount Luboc', '₱700 Day | ₱1,500 Overnight'],
-  ['Mount Opao', '₱1,500 Day | ₱2,000 Overnight'], ['Mount Pulang Lupa', '₱1,500 Day | ₱2,000 Overnight'],
-  ['Mount Danao', '₱800 Day'], ['Mount Ningwan', '₱800 Day'], ['Mount Tig-Atay', '₱1,000 Day'],
-  ['Mount Tambara', '₱800 Day'], ['Mount Butuan', '₱750 Day'], ['Mount Kurunawan', '₱1,200 Day'], ['Mount Andakon', '₱1,200 Day']
-];
-const otherTrails = [
-  ['Nadsadjan Falls', '₱350 Day | ₱500 Overnight'],
-  ['Kipot Falls', '₱500 Day'],
-  ['Lagsakan Falls', '₱700 Day | ₱1,000 Overnight'],
-  ['Guirutsan, Miagos & Sariri Falls Trio', '₱1,000 Day | ₱1,500 Overnight'],
-  ['Iglibog Falls', '₱500 Day'], ['Ayo Falls', '₱1,000 Day'], ['Ningwan Falls', '₱800 Day'],
-  ['Matong North', '₱500 Day'], ['Linaw Kawayan', '₱1,000 Day'], ['Kweba Nabaw Cave', '₱500 Day'],
-  ['Kulapnitan Cave', '₱500 Day'], ['Matong Cave', '₱2,000 Day | ₱2,500 Overnight'],
-  ['Bais Cave', '₱600 Day | ₱1,000 Overnight'], ['Tangyan Dam', '₱250 Day | ₱500 Overnight'], ['Linaw Simon', '₱250 Day | ₱500 Overnight']
+const trailDirectories = [
+  {
+    title: 'Barangay Passi · Ordinance No. 02-20',
+    items: [
+      ['Nadsadjan Falls', '₱350 Day | ₱500 Overnight'], ['Kipot Falls', '₱500 Day'],
+      ['Lagsakan Falls', '₱700 Day | ₱1,000 Overnight'], ['Mount Opao', '₱1,500 Day | ₱2,000 Overnight'],
+      ['Mount Pulang Lupa', '₱1,500 Day | ₱2,000 Overnight'], ['Kulapnitan Cave', '₱500 Day'],
+      ['Matong Cave', '₱2,000 Day | ₱2,500 Overnight'], ['Bais Cave', '₱600 Day | ₱1,000 Overnight'],
+      ['Tangyan Dam', '₱250 Day | ₱500 Overnight'], ['Linaw Simon', '₱250 Day | ₱500 Overnight']
+    ]
+  },
+  {
+    title: 'Barangay Igcabugao · Ordinance No. 3',
+    items: [
+      ['Mount Taripis', '₱750 Day | ₱1,500 Overnight'], ['Mount Luboc', '₱700 Day | ₱1,500 Overnight'],
+      ['Mount Danao', '₱800 Day'], ['Mount Ningwan', '₱800 Day'], ['Mount Tig-Atay', '₱1,000 Day'],
+      ['Mount Tambara', '₱800 Day'], ['Mount Butuan', '₱750 Day'], ['Mount Kurunawan', '₱1,200 Day'],
+      ['Mount Andakon', '₱1,200 Day'], ['Guiritsan, Miagos & Sariri Falls Trio', '₱1,000 Day | ₱1,500 Overnight'],
+      ['Iglibog Falls', '₱500 Day'], ['Ayo Falls', '₱1,000 Day'], ['Matong North', '₱500 Day'],
+      ['Linaw Kawayan', '₱1,000 Day'], ['Kweba Nabaw Cave', '₱500 Day']
+    ]
+  }
 ];
 const contacts = [
   { name: 'Shean Alfred Edquila', phone: '09086593883', email: 'sedquila@usa.edu.ph', facebook: 'https://www.facebook.com/share/1CMtXcQ1hF/' },
@@ -95,8 +102,10 @@ export default function App() {
   const [galleryIndex, setGalleryIndex] = useState(0);
   const filtered = featured.filter((spot) => filter === 'All' || spot.type === filter);
   const query = search.trim().toLowerCase();
-  const filteredMountains = mountains.filter(([name]) => name.toLowerCase().includes(query));
-  const filteredOther = otherTrails.filter(([name]) => name.toLowerCase().includes(query));
+  const filteredDirectories = trailDirectories.map((directory) => ({
+    ...directory,
+    items: directory.items.filter(([name]) => name.toLowerCase().includes(query))
+  }));
 
   useEffect(() => {
     setGalleryIndex(0);
@@ -114,7 +123,7 @@ export default function App() {
   const nav = [['Destinations', 'destinations'], ['More Trails', 'more-trails'], ['Rates', 'rates'], ['Guidelines', 'guidelines'], ['Contact', 'contact']];
   const scroll = (id) => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); };
 
-  return <div className="min-h-screen bg-[#F6F7F2] text-[#1A281E] selection:bg-[#2D5A36] selection:text-white">
+  return <div className="min-h-screen bg-[#F6F7F2] text-[#1A281E] selection:bg-[#2D5A36] selection:text-white [&_button]:cursor-pointer [&_button]:transition-all [&_button]:duration-200 [&_a]:cursor-pointer [&_a]:transition-all [&_a]:duration-200">
     <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-6">
       <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-[#DCE4D8] bg-white/95 px-4 py-2 shadow-lg shadow-[#1A281E]/5 backdrop-blur md:px-5">
         <button onClick={() => scroll('top')} className="flex items-center gap-2 text-left"><span className="rounded-full bg-[#2D5A36] p-2 text-white"><Mountain className="h-4 w-4" /></span><span><strong className="block text-xs tracking-tight">IGBARAS</strong><span className="block text-[8px] font-bold tracking-[.2em] text-[#647166]">ECO-TOURISM</span></span></button>
@@ -139,7 +148,7 @@ export default function App() {
           </div>
         </div>
         <div className="relative z-10 mx-auto -mt-14 grid max-w-5xl gap-px overflow-hidden rounded-3xl border border-[#D5E2CF] bg-[#D5E2CF] p-0 shadow-xl md:grid-cols-3">
-          {[['Brgy. Tigbanaba & Brgy. Igcabugao','Official Eco-Tourism Trails'],['7 Featured Spots + 19 More Trails','Peaks, waterfalls, rivers & caves'],['₱25 Municipal Visitor Fee','Municipal Ordinance 2014-04']].map(([title,sub], i) => <div key={title} className="min-h-28 bg-white p-5 md:p-6"><span className="mb-3 block text-[10px] font-bold text-[#2D5A36]">0{i+1}</span><p className="font-bold">{title}</p><p className="mt-1 text-xs text-[#657166]">{sub}</p></div>)}
+          {[['Tigbanaba · Igcabugao · Passi','Multi-Barangay Eco-Trails'],['7 Featured Spots + 25 More Trails','Peaks, waterfalls, rivers & caves'],['₱25 Municipal Visitor Fee','Municipal Ordinance 2014-04']].map(([title,sub], i) => <div key={title} className="min-h-28 bg-white p-5 md:p-6"><span className="mb-3 block text-[10px] font-bold text-[#2D5A36]">0{i+1}</span><p className="font-bold">{title}</p><p className="mt-1 text-xs text-[#657166]">{sub}</p></div>)}
         </div>
       </section>
 
@@ -147,7 +156,7 @@ export default function App() {
         <SectionKicker number="01" title="The Destination Directory" />
         <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><h2 className="text-3xl font-bold sm:text-5xl">Choose your <em className="font-serif font-normal text-[#386641]">way out.</em></h2><p className="mt-3 max-w-xl text-sm leading-6 text-[#637065]">Seven featured destinations, official fees, and practical details for your next Igbaras adventure.</p></div>
           <div className="flex flex-wrap gap-2">{[['All','All (7)'],['Mountains','Mountains (4)'],['Waterfalls','Waterfalls (3)']].map(([value,label]) => <button key={value} onClick={() => setFilter(value)} className={`rounded-full px-4 py-2 text-xs font-bold ${filter === value ? 'bg-[#2D5A36] text-white' : 'border border-[#D5E2CF] bg-white text-[#526054]'}`}>{label}</button>)}</div></div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{filtered.map((spot) => <article key={spot.id} className="group relative h-[420px] overflow-hidden rounded-3xl bg-[#9AAA90]">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{filtered.map((spot) => <article key={spot.id} className="group relative h-[420px] cursor-pointer overflow-hidden rounded-3xl bg-[#9AAA90] transition duration-300 hover:-translate-y-1">
           <SafeImage src={spot.image} alt={spot.name} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" fallbackLabel={spot.name} />
           <div className="absolute inset-0 bg-gradient-to-t from-[#152419]/95 via-[#152419]/20 to-transparent" />
           <span className="absolute right-4 top-4 max-w-[190px] rounded-full bg-white/95 px-3 py-2 text-right text-[10px] font-bold text-[#1A281E] shadow-sm">{spot.fee}</span>
@@ -155,12 +164,12 @@ export default function App() {
         </article>)}</div>
         <div id="more-trails" className="mt-16 rounded-3xl bg-[#E6EFE2] p-5 sm:p-8">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end"><div><SectionKicker number="" title="More Trails" /><h2 className="text-2xl font-bold sm:text-3xl">Explore More Trails</h2></div><label className="flex min-w-[260px] items-center gap-2 rounded-full border border-[#D5E2CF] bg-white px-4 py-3"><Search className="h-4 w-4 text-[#647166]" /><input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search trail name" className="w-full bg-transparent text-sm outline-none" /></label></div>
-          <div className="mt-7 grid gap-7 md:grid-cols-2"><TrailList title="Other Mountains" items={filteredMountains} /><TrailList title="Other Waterfalls, Rivers, Caves & Dams" items={filteredOther} /></div>
+          <div className="mt-7 grid gap-7 md:grid-cols-2">{filteredDirectories.map((directory) => <TrailList key={directory.title} title={directory.title} items={directory.items} />)}</div>
         </div>
       </section>
 
-      <section id="rates" className="border-y border-[#E0E7DC] bg-[#EFF3EC] px-4 py-20 sm:px-6"><div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12"><div className="lg:col-span-5"><SectionKicker number="02" title="Know Before You Go" /><h2 className="text-3xl font-bold sm:text-5xl">Official rates, made <em className="font-serif font-normal text-[#386641]">clear.</em></h2><p className="mt-6 text-sm leading-7 text-[#566258]">Plan with the requirements established under <strong>Municipal Ordinance 2014-04</strong> and <strong>Barangay Ordinance No. 3</strong>. Confirm trail access and rates directly with the local registration area before traveling.</p><div className="mt-8 grid grid-cols-3 gap-2">{[['07','Featured'],['1:5','Guide Ratio'],['₱25','Visitor Fee']].map(([v,l]) => <div key={l} className="rounded-3xl bg-white p-4 text-center"><strong className="block text-xl text-[#2D5A36]">{v}</strong><span className="text-[10px] font-bold text-[#667268]">{l}</span></div>)}</div></div>
-        <div className="space-y-4 lg:col-span-7"><RateCard icon={ShieldCheck} title="Mandatory Entrance & Environmental Fees" items={[['Visitors Fee (Municipal Ordinance 2014-04)','₱25.00'],['Barangay / Environmental Fee (Resident)','₱10.00'],['Barangay / Environmental Fee (Non-Resident)','₱30.00']]}/><RateCard icon={Users} title="Barangay Tigbanaba Guide & Porter Rates" items={[['Mt. Napulak Guide','₱1,000 (Day) | ₱1,500 (Overnight)'],['Mt. Napulak Porter','₱700/10kgs (Day) | ₱1,000/kgs (Overnight)'],['Mt. Igatmon Guide','₱1,000 (Day) | ₱1,500 (Overnight)'],['Mt. Igatmon Porter','₱1,000/10kgs (Day) | ₱1,500/kgs (Overnight)']]}/><RateCard icon={Tent} title="Barangay Igcabugao Standard Guide Rates" items={[['Mountain Day Tours','₱500 to ₱1,200 (Overnight: ₱1,000 to ₱1,500)'],['Waterfalls & Caves Day Tours','₱300 to ₱1,000 (Overnight: ₱1,500)']]}/></div></div></section>
+      <section id="rates" className="border-y border-[#E0E7DC] bg-[#EFF3EC] px-4 py-20 sm:px-6"><div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12"><div className="lg:col-span-5"><SectionKicker number="02" title="Know Before You Go" /><h2 className="text-3xl font-bold sm:text-5xl">Official rates, made <em className="font-serif font-normal text-[#386641]">clear.</em></h2><p className="mt-6 text-sm leading-7 text-[#566258]">Plan with the requirements established under <strong>Municipal Ordinance 2014-04</strong> and <strong>Barangay Ordinance No. 3</strong>. Confirm trail access and rates directly with the local registration area before traveling.</p><div className="mt-8 grid grid-cols-3 gap-2">{[['07','Featured'],['3','Barangays'],['₱25','Visitor Fee']].map(([v,l]) => <div key={l} className="rounded-3xl bg-white p-4 text-center"><strong className="block text-xl text-[#2D5A36]">{v}</strong><span className="text-[10px] font-bold text-[#667268]">{l}</span></div>)}</div></div>
+          <div className="space-y-4 lg:col-span-7"><RateCard icon={ShieldCheck} title="Mandatory Entrance & Environmental Fees" items={[['Visitors Fee (Municipal Ordinance 2014-04)','₱25.00'],['Barangay / Environmental Fee (Resident)','₱10.00'],['Barangay / Environmental Fee (Non-Resident)','₱30.00']]}/><RateCard icon={Users} title="Barangay Tigbanaba Guide & Porter Rates" items={[['Mt. Napulak Guide','₱1,000 (Day) | ₱1,500 (Overnight)'],['Mt. Napulak Porter','₱700/10kgs (Day) | ₱1,000/kgs (Overnight)'],['Mt. Igatmon Guide','₱1,000 (Day) | ₱1,500 (Overnight)'],['Mt. Igatmon Porter','₱1,000/10kgs (Day) | ₱1,500/kgs (Overnight)']]}/><RateCard icon={Tent} title="Barangay Igcabugao Standard Guide Rates" items={[['Mountain Day Tours','₱500 to ₱1,200 (Overnight: ₱1,000 to ₱1,500)'],['Waterfalls & Caves Day Tours','₱300 to ₱1,000 (Overnight: ₱1,500)']]}/></div></div></section>
 
       <section id="guidelines" className="mx-auto max-w-6xl px-4 py-20 sm:px-6"><div className="grid items-center gap-12 lg:grid-cols-12"><div className="relative lg:col-span-5"><div className="aspect-square overflow-hidden rounded-3xl border-4 border-white shadow-lg"><SafeImage src={guidelinesImage} alt="Forest trail" className="h-full w-full scale-[1.12] object-cover" fallbackLabel="Forest Trail" /></div><div className="absolute -bottom-5 right-2 flex h-28 w-28 flex-col items-center justify-center rounded-full border-4 border-[#F6F7F2] bg-[#2D5A36] text-center text-white shadow-lg"><Sprout className="mb-1 h-5 w-5 text-[#B7D5B0]" /><span className="font-serif text-sm italic">Leave it<br />better.</span></div></div><div className="lg:col-span-7"><SectionKicker number="03" title="Walk With Care" /><h2 className="text-3xl font-bold sm:text-5xl">Small steps. Lasting <em className="font-serif font-normal text-[#386641]">respect.</em></h2><div className="mt-8 divide-y divide-[#DCE4D8]">{[
         ['01','Day Tour Schedule','Strictly 6:00 AM – 5:00 PM only.'],['02','Overnight Coordination','Proper coordination with LGU personnel at the registration area is a must for overnight stays.'],['03','Mandatory Registration','Pay the ₱25 Municipal Visitor Fee and ₱10/₱30 Environmental Fee upon arrival.'],['04','Accredited Local Guides','Follow official Barangay Ordinance No. 3 guide rates and safety ratios.'],['05','Pack In, Pack Out','Leave no trace on peaks, campsites, and waterfall basins.']].map(([n,t,d]) => <div key={n} className="flex gap-4 py-4"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E6EFE2] text-xs font-bold text-[#386641]">{n}</span><div><h3 className="font-bold">{t}</h3><p className="mt-1 text-sm leading-6 text-[#637065]">{d}</p></div></div>)}</div></div></div>
@@ -175,4 +184,14 @@ export default function App() {
 }
 
 function TrailList({ title, items }) { return <div><h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-[#386641]">{title}</h3>{items.length ? <div className="overflow-hidden rounded-2xl bg-white/75">{items.map(([name, rate], i) => <div key={name} className={`grid grid-cols-[1fr_auto] gap-3 px-4 py-3 ${i ? 'border-t border-[#DCE4D8]' : ''}`}><span className="text-sm font-semibold">{name}</span><span className="text-right text-xs font-bold text-[#386641]">{rate}</span></div>)}</div> : <p className="rounded-2xl bg-white/70 p-5 text-sm text-[#637065]">No matching trails found.</p>}</div>; }
-function RateCard({ icon: Icon, title, items }) { return <article className="rounded-3xl border border-[#DCE4D8] bg-white p-5 sm:p-6"><div className="mb-4 flex items-center gap-3"><span className="rounded-full bg-[#E6EFE2] p-2.5 text-[#386641]"><Icon className="h-4 w-4" /></span><h3 className="font-bold">{title}</h3></div><div className="divide-y divide-[#E5EAE2]">{items.map(([label, value]) => <div key={label} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-center sm:justify-between"><span className="text-sm text-[#637065]">{label}</span><strong className="text-sm text-[#386641] sm:text-right">{value}</strong></div>)}</div></article>; }
+function RateCard({ icon: Icon, title, items }) {
+  const displayItems = title === 'Mandatory Entrance & Environmental Fees'
+    ? [
+        items[0],
+        ['Tigbanaba & Igcabugao Environmental Fee · Resident', '₱10.00'],
+        ['Tigbanaba & Igcabugao Environmental Fee · Non-Resident', '₱30.00'],
+        ['Passi Environmental Fee · Resident & Non-Resident (Ordinance No. 02-20)', '₱30.00']
+      ]
+    : items;
+  return <article className="rounded-3xl border border-[#DCE4D8] bg-white p-5 sm:p-6"><div className="mb-4 flex items-center gap-3"><span className="rounded-full bg-[#E6EFE2] p-2.5 text-[#386641]"><Icon className="h-4 w-4" /></span><h3 className="font-bold">{title}</h3></div><div className="divide-y divide-[#E5EAE2]">{displayItems.map(([label, value]) => <div key={label} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-center sm:justify-between"><span className="text-sm text-[#637065]">{label}</span><strong className="text-sm text-[#386641] sm:text-right">{value}</strong></div>)}</div></article>;
+}
