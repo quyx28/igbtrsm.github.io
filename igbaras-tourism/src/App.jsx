@@ -5,7 +5,6 @@ import {
 } from 'lucide-react';
 import heroImage from './assets/images/hero.jpg';
 import guidelinesImage from './assets/images/section3.jpg';
-import logoImage from './assets/images/logo3.jpg';
 import napulakImage from './assets/images/napulak/napu.jpg';
 import igatmonImage from './assets/images/igatmon/igat.jpg';
 import salagyawanImage from './assets/images/salag/salag.jpg';
@@ -13,6 +12,9 @@ import batoImage from './assets/images/bato/bato (3).jpg';
 import guiritsanImage from './assets/images/guiritsan/guirit.jpg';
 import butuanImage from './assets/images/butuan/butuan.jpg';
 import nadsadjanImage from './assets/images/nadsajan/nads.jpg';
+import logoFinalImage from './assets/logo final.jpeg';
+import sheanProfileImage from './assets/Profile2.jpeg';
+import charisseProfileImage from './assets/Profile.jpeg';
 
 const photoModules = import.meta.glob('./assets/images/**/*.jpg', { eager: true, query: '?url', import: 'default' });
 const getGallery = (folder) => Object.entries(photoModules)
@@ -54,22 +56,9 @@ const trailDirectories = [
   }
 ];
 const contacts = [
-  { name: 'Shean Alfred Edquila', phone: '09086593883', email: 'sedquila@usa.edu.ph', facebook: 'https://www.facebook.com/share/1CMtXcQ1hF/' },
-  { name: 'Charisse Ann Petaño', phone: '09669959861', email: 'cpetano@usa.edu.ph', facebook: 'https://www.facebook.com/share/1Cc3vZCGXf/' }
+  { name: 'Shean Alfred Edquila', phone: '09086593883', email: 'sedquila@usa.edu.ph', facebook: 'https://www.facebook.com/share/1CMtXcQ1hF/', image: sheanProfileImage },
+  { name: 'Charisse Ann Petaño', phone: '09669959861', email: 'cpetano@usa.edu.ph', facebook: 'https://www.facebook.com/share/1Cc3vZCGXf/', image: charisseProfileImage }
 ];
-const teamMembers = [
-  {
-    name: 'Charisse Ann Petaño',
-    motto: "It's our differences that make us incredibly exceptional.",
-    bio: 'An open-minded and creative individual who values individuality and diversity. Charisse believes that embracing differences allows people to discover their strengths, inspire others, and create meaningful connections.'
-  },
-  {
-    name: 'Shean Alfred Edquila',
-    motto: 'Dream Big, Achieve Bigger',
-    bio: 'An ambitious and goal-driven individual who believes that every great achievement begins with a dream. Through hard work, determination, and continuous growth, Shean strives to turn his aspirations into reality.'
-  }
-];
-
 function SafeImage({ src, alt, className = '', children, fallbackLabel }) {
   const [failed, setFailed] = useState(!src);
   useEffect(() => setFailed(!src), [src]);
@@ -95,7 +84,7 @@ function ContactCard({ person }) {
   return (
     <article className="rounded-3xl border border-[#DCE4D8] bg-white p-5 shadow-sm sm:p-6">
       <div className="mb-5 flex items-start justify-between gap-4">
-        <div><p className="text-lg font-bold">{person.name}</p><p className="mt-1 text-xs text-[#667268]">BSBA MM - 3B</p></div>
+        <div className="flex items-center gap-3"><img src={person.image} alt="" className="h-12 w-12 rounded-full object-cover object-top ring-2 ring-[#E6EFE2]" /><div><p className="text-lg font-bold">{person.name}</p><p className="mt-1 text-xs text-[#667268]">BSBA MM - 3B</p></div></div>
         <a href={person.facebook} target="_blank" rel="noreferrer" aria-label={`Facebook of ${person.name}`} className="rounded-full bg-[#EFF3EC] p-3 text-[#2D5A36] hover:bg-[#E2EADF]"><ExternalLink className="h-4 w-4" /></a>
       </div>
       <div className="space-y-3">
@@ -133,13 +122,13 @@ export default function App() {
     return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', handleKeys); };
   }, [selected]);
 
-  const nav = [['Destinations', 'destinations'], ['More Trails', 'more-trails'], ['Rates', 'rates'], ['Guidelines', 'guidelines'], ['About Us', 'about-us'], ['Contact', 'contact']];
+  const nav = [['Destinations', 'destinations'], ['More Trails', 'more-trails'], ['Rates', 'rates'], ['Guidelines', 'guidelines'], ['About Us', 'about'], ['Contact', 'contact']];
   const scroll = (id) => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); };
 
   return <div className="min-h-screen bg-[#F6F7F2] text-[#1A281E] selection:bg-[#2D5A36] selection:text-white [&_button]:cursor-pointer [&_button]:transition-all [&_button]:duration-200 [&_a]:cursor-pointer [&_a]:transition-all [&_a]:duration-200">
     <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-6">
       <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-[#DCE4D8] bg-white/95 px-4 py-2 shadow-lg shadow-[#1A281E]/5 backdrop-blur md:px-5">
-        <button onClick={() => scroll('top')} className="flex items-center gap-2 text-left"><img src={logoImage} alt="Igbaras Eco-Tourism" className="h-10 w-10 rounded-full border border-[#DCE4D8] object-cover" /><span><strong className="block text-xs tracking-tight">IGBARAS</strong><span className="block text-[8px] font-bold tracking-[.2em] text-[#647166]">ECO-TOURISM</span></span></button>
+        <button onClick={() => scroll('top')} className="flex items-center gap-2 text-left"><img src={logoFinalImage} alt="Lakbay Igbaras" className="w-10 h-10 rounded-full object-cover border border-[#D5E2CF]" /><strong className="block text-xs tracking-tight">Lakbay Igbaras</strong></button>
         <nav className="hidden items-center gap-6 text-xs font-semibold md:flex">{nav.map(([label, id]) => <button key={id} onClick={() => scroll(id)} className="transition hover:text-[#D97757]">{label}</button>)}</nav>
         <button onClick={() => scroll('contact')} className="hidden rounded-full bg-[#2D5A36] px-5 py-2.5 text-xs font-bold text-white md:block">Inquire Now</button>
         <button onClick={() => setMenuOpen(!menuOpen)} className="rounded-full border border-[#DCE4D8] p-2 md:hidden" aria-label="Toggle navigation">{menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
@@ -188,11 +177,14 @@ export default function App() {
         ['01','Day Tour Schedule','Strictly 6:00 AM – 5:00 PM only.'],['02','Overnight Coordination','Proper coordination with LGU personnel at the registration area is a must for overnight stays.'],['03','Mandatory Registration','Pay the ₱25 Municipal Visitor Fee and ₱10/₱30 Environmental Fee upon arrival.'],['04','Accredited Local Guides','Follow official Barangay Ordinance No. 3 guide rates and safety ratios.'],['05','Pack In, Pack Out','Leave no trace on peaks, campsites, and waterfall basins.']].map(([n,t,d]) => <div key={n} className="flex gap-4 py-4"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E6EFE2] text-xs font-bold text-[#386641]">{n}</span><div><h3 className="font-bold">{t}</h3><p className="mt-1 text-sm leading-6 text-[#637065]">{d}</p></div></div>)}</div></div></div>
       <div className="mt-16 rounded-3xl bg-[#E6EFE2] p-6 sm:p-8"><p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[.18em] text-[#4B6B50]">Your next trail in three steps</p><div className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">{[['1','Pick Destination'],['2','Check Rates & Rules'],['3','Contact Desk to Inquire']].map(([n,t],i) => <React.Fragment key={n}><div className="flex items-center gap-3 rounded-2xl bg-white p-4"><span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2D5A36] text-xs font-bold text-white">{n}</span><strong className="text-sm">{t}</strong></div>{i < 2 && <ArrowRight className="mx-auto hidden h-4 w-4 text-[#7D907D] md:block" />}</React.Fragment>)}</div></div></section>
 
-      <section id="about-us" className="scroll-mt-24 border-y border-[#E0E7DC] bg-[#EFF3EC] px-4 py-20 sm:px-6"><div className="mx-auto max-w-6xl"><SectionKicker number="04" title="About Us" /><div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end"><div><h2 className="text-3xl font-bold sm:text-5xl">Meet the people behind <em className="font-serif font-normal text-[#386641]">the project.</em></h2><p className="mt-6 text-sm leading-7 text-[#566258]">We are 3rd-year BSBA Marketing Management students at the University of San Agustin. We are passionate about learning, growing, and creating meaningful experiences as we prepare for our future in the business world. Our individual values, ambitions, and unique perspectives shape who we are and inspire us to achieve our goals.</p><div className="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-xs font-bold text-[#386641]">University of San Agustin · BSBA Marketing Management 3B</div></div><div className="grid gap-4 sm:grid-cols-2">{teamMembers.map((member, index) => <article key={member.name} className="rounded-3xl border border-[#DCE4D8] bg-white p-6 shadow-sm"><span className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#E6EFE2] text-xs font-bold text-[#386641]">0{index + 1}</span><h3 className="text-xl font-bold">{member.name}</h3><blockquote className="mt-4 border-l-2 border-[#D97757] pl-4 font-serif text-lg italic leading-7 text-[#386641]">“{member.motto}”</blockquote><p className="mt-4 text-sm leading-7 text-[#637065]">{member.bio}</p></article>)}</div></div></div></section>
+      <section id="about" className="scroll-mt-24 border-y border-[#E0E7DC] bg-[#EFF3EC] px-4 py-20 sm:px-6"><div className="mx-auto max-w-6xl"><SectionKicker number="04" title="About Us" /><h2 className="text-3xl font-bold sm:text-5xl">Meet the minds behind Lakbay Igbaras.</h2><p className="mt-6 max-w-3xl text-sm leading-7 text-[#566258]">We are 3rd year BSBA Marketing Management students at the University of San Agustin. We are passionate about learning, growing, and creating meaningful experiences as we prepare for our future in the business world.</p><div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <article className="bg-white rounded-3xl p-6 sm:p-8 border border-[#DCE4D8] shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-6"><img src={sheanProfileImage} alt="Shean Alfred Edquila" className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover object-top bg-[#F6F7F2] ring-4 ring-[#E6EFE2] shrink-0" /><div><span className="inline-flex rounded-full bg-[#E6EFE2] px-3 py-1 text-[10px] font-bold text-[#386641]">BSBA MM - 3B · University of San Agustin</span><h3 className="mt-3 text-xl font-bold">Shean Alfred Edquila</h3><p className="mt-3 text-sm leading-7 text-[#637065]">Passionate about promoting sustainable local tourism and connecting outdoor enthusiasts with the highland trails, peaks, and communities of Igbaras while honing practical marketing management skills.</p></div></article>
+        <article className="bg-white rounded-3xl p-6 sm:p-8 border border-[#DCE4D8] shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-6"><img src={charisseProfileImage} alt="Charisse Ann Petaño" className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover object-top bg-[#F6F7F2] ring-4 ring-[#E6EFE2] shrink-0" /><div><span className="inline-flex rounded-full bg-[#E6EFE2] px-3 py-1 text-[10px] font-bold text-[#386641]">BSBA MM - 3B · University of San Agustin</span><h3 className="mt-3 text-xl font-bold">Charisse Ann Petaño</h3><p className="mt-3 text-sm leading-7 text-[#637065]">Dedicated to crafting meaningful visitor experiences and making official municipal trail information, rates, and local guide coordination accessible for every traveler exploring Igbaras.</p></div></article>
+      </div></div></section>
 
-      <section id="contact" className="scroll-mt-24 px-4 py-20 sm:px-6"><div className="mx-auto max-w-6xl rounded-3xl bg-[#E6EFE2] p-5 sm:p-8 lg:p-10"><div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><SectionKicker number="05" title="Direct Inquiry Contact" /><h2 className="text-3xl font-bold sm:text-5xl">Your trail starts with <em className="font-serif font-normal text-[#386641]">a hello.</em></h2></div><p className="max-w-md text-sm leading-7 text-[#566258]">Have a question about visiting Igbaras? Reach out to our team for trail and tourism inquiries.</p></div><div className="grid gap-4 md:grid-cols-2">{contacts.map((person) => <ContactCard key={person.email} person={person} />)}</div></div></section>
+      <section id="contact" className="scroll-mt-24 px-4 py-20 sm:px-6"><div className="mx-auto max-w-6xl bg-[#E6EFE2] border border-[#D2DFCC] rounded-3xl p-6 sm:p-10 lg:p-12"><div className="grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-start"><div><SectionKicker number="05" title="Direct Inquiry & Contact" /><h2 className="text-3xl font-bold sm:text-5xl">Your trail starts with a hello.</h2><p className="mt-6 text-sm leading-7 text-[#566258]">Have a route in mind? Reach out directly to our coordinators to ask about trail access, official fees, and local guide coordination before your visit.</p></div><div className="grid grid-cols-1 md:grid-cols-2 gap-4">{contacts.map((person) => <ContactCard key={person.email} person={person} />)}</div></div></div></section>
     </main>
-    <footer className="bg-[#18261B] px-4 py-10 text-white sm:px-6"><div className="mx-auto flex max-w-6xl flex-col justify-between gap-4 sm:flex-row sm:items-center"><div className="flex items-center gap-3"><img src={logoImage} alt="" className="h-10 w-10 rounded-full border border-white/30 object-cover" /><strong className="tracking-wide">IGBARAS ECO-TOURISM</strong></div><p className="text-xs text-white/60">Explore responsibly. Leave the wild better.</p></div></footer>
+    <footer className="bg-[#18261B] px-4 py-10 text-white sm:px-6"><div className="mx-auto flex max-w-6xl flex-col justify-between gap-4 sm:flex-row sm:items-center"><div className="flex items-center gap-3"><img src={logoFinalImage} alt="" className="w-11 h-11 rounded-full object-cover border border-white/20" /><strong className="tracking-wide">Lakbay Igbaras</strong></div><p className="text-xs text-white/60">Explore responsibly. Leave the wild better.</p></div></footer>
 
     {selected && <div onClick={() => setSelected(null)} className="fixed inset-0 z-50 flex items-center justify-center bg-[#101710]/70 p-4 backdrop-blur-sm"><div onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" className="max-h-[90vh] w-full max-w-2xl overflow-auto rounded-3xl bg-[#F6F7F2] shadow-2xl"><div className="relative h-72 overflow-hidden rounded-t-3xl"><SafeImage src={selected.gallery?.[galleryIndex] || selected.image} alt={`${selected.name} photo ${galleryIndex + 1}`} className="h-full w-full object-cover" fallbackLabel={selected.name} /><div className="absolute inset-0 bg-gradient-to-t from-[#152419]/80 to-transparent" />{selected.gallery?.length > 1 && <><button onClick={() => setGalleryIndex((galleryIndex - 1 + selected.gallery.length) % selected.gallery.length)} className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/95 p-2.5 text-[#1A281E] shadow-lg" aria-label="Previous photo"><ChevronLeft className="h-5 w-5" /></button><button onClick={() => setGalleryIndex((galleryIndex + 1) % selected.gallery.length)} className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/95 p-2.5 text-[#1A281E] shadow-lg" aria-label="Next photo"><ChevronRight className="h-5 w-5" /></button><div className="absolute bottom-20 left-1/2 flex -translate-x-1/2 gap-1.5 rounded-full bg-black/30 px-2 py-1.5">{selected.gallery.map((photo, index) => <button key={photo} onClick={() => setGalleryIndex(index)} aria-label={`View photo ${index + 1}`} className={`h-2 rounded-full transition-all ${index === galleryIndex ? 'w-5 bg-white' : 'w-2 bg-white/55'}`} />)}</div></>}<button onClick={() => setSelected(null)} className="absolute right-4 top-4 rounded-full bg-white p-2 text-[#1A281E]" aria-label="Close"><X className="h-5 w-5" /></button><div className="absolute bottom-5 left-5 text-white"><p className="text-xs uppercase tracking-widest">{selected.barangay}</p><h2 className="mt-1 text-3xl font-bold">{selected.name}</h2></div></div><div className="p-5 sm:p-7"><p className="font-serif text-lg italic text-[#386641]">“{selected.tagline}”</p><div className="mt-6 grid gap-3 sm:grid-cols-2"><div className="rounded-2xl bg-[#E6EFE2] p-4"><span className="text-[10px] font-bold uppercase tracking-widest text-[#647166]">Elevation / Type</span><p className="mt-1 font-bold">{selected.elevation}</p></div><div className="rounded-2xl bg-[#E6EFE2] p-4"><span className="text-[10px] font-bold uppercase tracking-widest text-[#647166]">Guide Fee</span><p className="mt-1 font-bold">{selected.fee}</p></div></div>{selected.porter && <div className="mt-3 rounded-2xl border border-[#D5E2CF] p-4"><span className="text-[10px] font-bold uppercase tracking-widest text-[#647166]">Porter</span><p className="mt-1 font-bold">{selected.porter}</p></div>}<button onClick={() => { scroll('contact'); setSelected(null); }} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#2D5A36] py-3.5 text-sm font-bold text-white">Inquire about this trail <ArrowRight className="h-4 w-4" /></button></div></div></div>}
   </div>;
