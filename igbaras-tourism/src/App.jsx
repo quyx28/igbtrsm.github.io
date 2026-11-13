@@ -122,7 +122,7 @@ export default function App() {
     return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', handleKeys); };
   }, [selected]);
 
-  const nav = [['Destinations', 'destinations'], ['More Trails', 'more-trails'], ['Rates', 'rates'], ['Guidelines', 'guidelines'], ['About Us', 'about'], ['Contact', 'contact']];
+  const nav = [['Home', 'top'], ['Destinations', 'destinations'], ['More Trails', 'more-trails'], ['Rates', 'rates'], ['Guidelines', 'guidelines'], ['About Us', 'about'], ['Contact', 'contact']];
   const scroll = (id) => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); };
 
   return <div className="min-h-screen bg-[#F6F7F2] text-[#1A281E] selection:bg-[#2D5A36] selection:text-white [&_button]:cursor-pointer [&_button]:transition-all [&_button]:duration-200 [&_a]:cursor-pointer [&_a]:transition-all [&_a]:duration-200">
